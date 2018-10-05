@@ -48,12 +48,27 @@ const getNameTopDirectory = (str) => {
     return str.substring(start);
 };
 
+
+const readFileLineByLineIntoArray = (filePath) => {
+    var readline = require('linebyline');
+    var rl = readline(filePath);
+    var returnArray=[];
+  rl.on('line', function(line, lineCount, byteCount) {
+    // do something with the line of text
+    returnArray.push(line);
+  })
+  .on('error', function(e) {
+    console.log('something went wrong');
+  });
+  return returnArray;
+};
 module.exports = {
     isDirectory,
     getName,
     getDateTime,
     isTopDirectory,
     getNameTopDirectory,
-    getFileSize
+    getFileSize,
+    readFileLineByLineIntoArray
 };
 

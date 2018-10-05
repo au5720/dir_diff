@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/au5720/dir_diff#readme",
   "dependencies": {
+    "linebyline": "^1.3.0",
     "mocha": "^5.2.0"
   }
 }

@@ -1,6 +1,8 @@
 const assert = require('assert');
 
-const ParseString = require('..\\src\\parse_string');
+const ParseString = require('../src/parse_string');
+const ParseFile = require('../src/parse_file');
+
 
 
 describe('Parse lines from dir /s', () => {
@@ -74,4 +76,14 @@ Directory of c:\
         fs.writeFileSync(filePath, fileData, 'utf8');
         console.log('Createing some test data for parsing tests');
     }
+    it('#readFileIntoArray() - Should return an array of objects representing the files', () => {
+        const fileDataAsArray=ParseFile.readFileLineByLineIntoArray(filePath);
+        // test the First and last Lines are equal to the test
+        assert.equal(fileDataAsArray[1], 'Volume in drive C has no label.');
+    });
+    it('#parseFilesName - Should return array with path and filename set', () => {
+
+        ParseFile.parseFileName(filePath);
+    });
+
 });
