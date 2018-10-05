@@ -1,7 +1,6 @@
 
-const ParseString = require('./parse_string');
+const ps = require('./parse_string');
 
-console.log(__dirname);
 
 
 const readFileLineByLineIntoArray = (filePath) => {
@@ -14,12 +13,20 @@ const parseFileName = (filePath) => {
     const fileData = readFileLineByLineIntoArray(filePath);
     // Check to see if we have a top Directory name
     let currentTopDirectoryName='';
+    console.log(JSON.stringify(fileData));
+
     for(let line of fileData) {
-        if(line[0] !== ' ' && !ParseString.isDirectory(line)){
-            if(ParseString.isTopDirectory(line)){
-                currentTopDirectoryName=ParseString.getNameTopDirectory(line);
-                console.log(currentTopDirectoryName);
-            } 
+        if(ps.isTopDirectory(line)){
+            currentTopDirectoryName=ps.getNameTopDirectory(line);
+        } 
+        else if(line !== "" && !(ps.isDirectory(line)) && !isNaN(line[0]))
+        {
+            let shortFileName=ps.getName(line);
+            let dateTime=ps.getDateTime(line);
+            let fileSize=ps.getFileSize(line);
+            console.log(  Number(line[0]) );
+            console.log(currentTopDirectoryName + "\\" + shortFileName, dateTime, fileSize);
+            console.log('='.repeat(100));
         }
 
     }

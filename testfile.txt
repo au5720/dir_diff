@@ -1,8 +1,5 @@
+ Directory of c:\
 
-Volume in drive C has no label.
-Volume Serial Number is D808-E7EA
-
-Directory of c:
 28/06/2017  14:46                 0 3020098195690ea114
 28/06/2017  14:46                 0 3c091fd2284e840456579ec813
 28/06/2017  14:46                 0 488817c7ea9d3bca0d
@@ -15,4 +12,79 @@ Directory of c:
 05/10/2016  10:49    <DIR>          DataFeedSQL2016
 14/04/2016  16:37    <DIR>          EASLog
 13/12/2016  13:15    <DIR>          elixir
-01/09/2016  10:08    <DIR>          erlang    
+01/09/2016  10:08    <DIR>          erlang
+16/08/2016  16:43               119 GovLog_GovSrv.EXE.txt
+17/08/2015  07:58    <DIR>          inetpub
+22/09/2016  10:40    <DIR>          migrate
+01/12/2006  23:37           904,704 msdia80.dll
+13/04/2016  16:59    <DIR>          NVIDIA
+19/06/2017  12:03    <DIR>          oracle
+10/07/2015  12:04    <DIR>          PerfLogs
+17/10/2017  11:45    <DIR>          Program Files
+17/05/2018  19:39    <DIR>          Program Files (x86)
+14/04/2016  12:05    <DIR>          psexec
+04/10/2016  14:51    <DIR>          Python27
+14/04/2016  11:31               231 RemoteInstall.log
+10/03/2017  16:18    <DIR>          REPOS
+01/06/2018  17:59    <DIR>          scripts
+28/09/2016  11:35    <DIR>          SQLData
+07/05/2018  15:26    <DIR>          sqldeveloper
+19/06/2017  11:25               223 sqlnet.ora
+19/07/2016  15:23               223 sqlnet1607193PM2355.bak
+19/06/2017  11:21               223 sqlnet17061911AM2115.bak
+19/06/2017  11:25               223 sqlnet17061911AM2528.bak
+22/01/2018  11:26    <DIR>          Sun
+20/04/2016  11:31    <DIR>          Swsetup
+24/11/2017  11:21    <DIR>          T7SimulationFiles
+14/04/2016  12:05    <DIR>          tabula
+01/10/2018  11:02    <DIR>          temp
+14/08/2018  16:34    <DIR>          TestShare
+03/11/2017  17:15                21 tmuninst.ini
+16/06/2016  16:00             1,382 tnsnames.ora
+19/07/2016  15:23             1,382 tnsnames1607193PM2355.bak
+19/06/2017  11:21             1,382 tnsnames17061911AM2115.bak
+19/06/2017  11:25             1,382 tnsnames17061911AM2528.bak
+25/11/2017  10:53    <DIR>          Users
+13/09/2017  15:26           625,464 VPAgent_Installation.log
+18/09/2018  09:56            26,098 VPPLS.log
+27/02/2018  15:24    <DIR>          Windows
+              18 File(s)      1,563,057 bytes
+
+ Directory of c:\$Recycle.Bin\S-1-5-21-1147481723-460994420-313593124-1835
+
+03/08/2018  09:55                84 $I02GPPX.html
+03/08/2018  10:00                84 $I02IKFH.html
+07/08/2018  12:39                98 $I04KJD3.html
+03/08/2018  09:55                84 $I05VI82.html
+03/08/2018  10:00                84 $I088O96.html
+07/08/2018  12:39                98 $I093AAP.html
+03/08/2018  09:55                84 $I09M10G.html
+03/08/2018  10:00                84 $I0DIW1D.html
+03/08/2018  10:00                82 $I0F92RL.html
+07/08/2018  12:39                98 $I0FIPSN.html
+03/08/2018  10:00                84 $I0KHCF7.html
+07/08/2018  12:39                96 $I0MH6UA.html
+07/08/2018  12:39                98 $I0MPHCA.html
+03/08/2018  09:55                84 $I0XZ1JZ.html
+07/08/2018  12:39                98 $I15GN0R.html
+03/08/2018  09:55                84 $I18GNUB.html
+03/08/2018  10:00                82 $I1EEU4Z.html
+03/08/2018  10:00                84 $I1EWUZC.html
+03/08/2018  09:55                84 $I1G0OBJ.html
+03/08/2018  10:00                84 $I1NC0S3.html
+03/08/2018  10:00                84 $I1T45HS.html
+03/08/2018  09:55                84 $I1X1HCE.html
+07/08/2018  12:39                98 $I20AKDS.html
+07/08/2018  12:39                98 $I29CBX7.html
+07/08/2018  12:39                98 $I2ABDU5.html
+07/08/2018  12:39                98 $I2BL6CL.html
+03/08/2018  10:00                82 $I2CV54U.html
+07/08/2018  12:39                98 $I2M5JV1.html
+07/08/2018  12:39                98 $I2NQ5KK.html
+03/08/2018  10:00                84 $I2PFZKQ.html
+03/08/2018  09:55                84 $I2PGMNO.html
+07/08/2018  12:39                98 $I2TLT1S.html
+03/08/2018  09:55                84 $I2VF17T.html
+03/08/2018  09:55                84 $I2Y6EGS.html
+07/08/2018  12:39                98 $I2YHSXL.html
+03/08/2018  09:55                84 $I30DIKE.html
