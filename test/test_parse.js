@@ -50,40 +50,14 @@ const ParseFile = require('../src/parse_file');
 // });
 
 describe('Using a file', () => {
-const fileData=`
-Volume in drive C has no label.
-Volume Serial Number is D808-E7EA
-
-Directory of c:\
-
-28/06/2017  14:46                 0 3020098195690ea114
-28/06/2017  14:46                 0 3c091fd2284e840456579ec813
-28/06/2017  14:46                 0 488817c7ea9d3bca0d
-14/04/2016  12:33    <DIR>          bin
-28/06/2017  14:46                 0 c6034ecd2599c4a6390d12e154abfd
-03/08/2016  15:22    <DIR>          clj
-13/04/2016  17:18    <DIR>          cljCLR
-14/04/2016  12:07    <DIR>          clojureCLR
-02/05/2017  10:55    <DIR>          cygwin64
-05/10/2016  10:49    <DIR>          DataFeedSQL2016
-14/04/2016  16:37    <DIR>          EASLog
-13/12/2016  13:15    <DIR>          elixir
-01/09/2016  10:08    <DIR>          erlang    
-`;
-    const fs = require('fs');
-    const filePath='testfile.txt';
-    if (! fs.existsSync(filePath)) {
-        fs.writeFileSync(filePath, fileData, 'utf8');
-        console.log('Createing some test data for parsing tests');
-    }
+    const filePath='20181001.txt';
     // it('#readFileIntoArray() - Should return an array of objects representing the files', () => {
     //     const fileDataAsArray=ParseFile.readFileLineByLineIntoArray(filePath);
     //     // test the First and last Lines are equal to the test
     //     assert.equal(fileDataAsArray[1], 'Volume in drive C has no label.');
     // });
-    it('#parseFilesName - Should return array with path and filename set', () => {
-
-        ParseFile.parseFileName(filePath);
+    it('#parseFileNames - Should return array with path and filename set', () => {
+        ParseFile.parseFileNames(filePath);
     });
 
 });

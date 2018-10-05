@@ -9,12 +9,11 @@ const readFileLineByLineIntoArray = (filePath) => {
     return fileData.split("\n");
 };
 
-const parseFileName = (filePath) => {
+const parseFileNames = (filePath) => {
     const fileData = readFileLineByLineIntoArray(filePath);
     // Check to see if we have a top Directory name
     let currentTopDirectoryName='';
-    console.log(JSON.stringify(fileData));
-
+    //console.log(fileData.length);
     for(let line of fileData) {
         if(ps.isTopDirectory(line)){
             currentTopDirectoryName=ps.getNameTopDirectory(line);
@@ -24,15 +23,13 @@ const parseFileName = (filePath) => {
             let shortFileName=ps.getName(line);
             let dateTime=ps.getDateTime(line);
             let fileSize=ps.getFileSize(line);
-            console.log(  Number(line[0]) );
-            console.log(currentTopDirectoryName + "\\" + shortFileName, dateTime, fileSize);
-            console.log('='.repeat(100));
+            let fullFileName=currentTopDirectoryName + '\\' + shortFileName;
+            console.log(fullFileName);
         }
-
     }
 };
 
 module.exports = {
     readFileLineByLineIntoArray,
-    parseFileName
+    parseFileNames
 };
