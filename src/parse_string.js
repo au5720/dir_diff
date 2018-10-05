@@ -12,7 +12,8 @@ const extractPresets = {
     name: [36],
     dateTime: [0,17],
     topLevelDir: [1,10],
-    topLevelDirName: [14]
+    topLevelDirName: [14],
+    fileSize: [18,35]
 };
 
 
@@ -31,6 +32,12 @@ const getDateTime = (str) => {
     return str.substring(start, end);
 };
 
+const getFileSize = (str) => {
+    const [start, end] = extractPresets.fileSize;
+    const num=str.substring(start, end).split('').filter( v => v!==',').join('');
+    return parseInt(num);
+};
+
 const isTopDirectory = (str) => {
     const [start, end] = extractPresets.topLevelDir;
     return str.substring(start, end) === 'Directory';
@@ -46,6 +53,7 @@ module.exports = {
     getName,
     getDateTime,
     isTopDirectory,
-    getNameTopDirectory
+    getNameTopDirectory,
+    getFileSize
 };
 
