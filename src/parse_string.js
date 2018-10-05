@@ -6,6 +6,8 @@ Date:       05/10/2018
 
 */
 
+const moment = require('moment');
+const ms = require('ms');
 
 const extractPresets = {
     directory: [22,25],
@@ -16,38 +18,42 @@ const extractPresets = {
     fileSize: [18,35]
 };
 
+const doExtract = (key,str, test) => {
+    const [start, end] = extractPresets[key];
+    let ret = end ? str.substring(start,end) : str.substring(start);
+    return test ? ret === test : ret;
+};
 
 const getName = (str) => {
-    const start= extractPresets.name;
-    return str.substring(start);
+    return doExtract('name', str);
 };
 
 const isDirectory = (str) => {
-    const [start, end] = extractPresets.directory;
-    return str.substring(start,end) === 'DIR';
+    return doExtract('directory',str,'DIR');
 };
 
 const getDateTime = (str) => {
-    const [start, end] = extractPresets.dateTime;
-    return str.substring(start, end);
+    let dt = doExtract('dateTime', str);
+    return new Date(`${dt.substring(3,5)}/${dt.substring(0,2)}/${dt.substring(6)}`);
 };
 
 const getFileSize = (str) => {
-    const [start, end] = extractPresets.fileSize;
-    const num=str.substring(start, end).split('').filter( v => v!==',').join('');
+    const fSize=doExtract('fileSize',str)
+    const num=fSize.split('').filter( v => v!==',').join('');
     return parseInt(num);
 };
 
 const isTopDirectory = (str) => {
-    const [start, end] = extractPresets.topLevelDir;
-    return str.substring(start, end) === 'Directory';
+    return doExtract('topLevelDir', str, 'Directory')
 };
 
 const getNameTopDirectory = (str) => {
-    const [start, end] = extractPresets.topLevelDirName;
-    return str.substring(start);
+    return doExtract('topLevelDirName', str);
 };
 
+const getDateTimeMS= (str) => {
+    return getDateTime(str).getTime();
+};
 
 module.exports = {
     isDirectory,
@@ -55,6 +61,7 @@ module.exports = {
     getDateTime,
     isTopDirectory,
     getNameTopDirectory,
-    getFileSize
+    getFileSize,
+    getDateTimeMS
 };
 

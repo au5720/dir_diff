@@ -1,15 +1,40 @@
 
 
 const ParseFile = require('./src/parse_file');
+const FileDetails = require('./src/schemas/file_details');
 
-const filePath1='20181001.txt';
-let fileObject=ParseFile.parseFileNames(filePath1);
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/test');
 
-let keys=Object.keys(fileObject);
-console.log(keys[0]);
-var k = keys[10000];
 
-console.log(fileObject[k]);
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function() {
+  console.log('we are connected!');
+
+  const filePath1='20181001.txt';
+  let fileData=ParseFile.parseFileNames(filePath1);
+  var fDetail=null;
+  var cnt=0;
+  for(let obj of fileData) {
+      //console.log(obj);
+      fDetail = new FileDetails(obj);
+      fDetail.save(err => {
+          if(err) throw err;
+      });
+      cnt++;
+      if((cnt % 10000) === 0) { console.log(cnt + ' inserted');}
+  }
+});
+
+// const filePath1='20181001.txt';
+// let fileObject=ParseFile.parseFileNames(filePath1);
+
+// let keys=Object.keys(fileObject);
+// console.log(keys[0]);
+// var k = keys[10000];
+
+// console.log(fileObject[k]);
 
 // console.log(fileData1.length);
 
