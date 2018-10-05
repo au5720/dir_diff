@@ -1,21 +1,35 @@
+const assert = require('assert');
+
 const ParseString = require('..\\src\\parse_string');
 
-var assert = require('assert');
+
 describe('Parse File', () => {
   describe('Detail Line Functions', () => {
-    let inputStr='03/08/2016  15:22    <DIR>          clj';
+    const inputStr='03/08/2016  15:22    <DIR>          clj';
     it('should return true if <DIR> is in the file line', () => {
-        let test = ParseString.isDirectory(inputStr); 
+        const test = ParseString.isDirectory(inputStr); 
         assert.equal(test, true);
     });
     it('Should return name of file or directory', () => {
-        let name=ParseString.getName(inputStr);
+        const name=ParseString.getName(inputStr);
         assert.equal(name, 'clj');
     });
 
     it(' Should parse out the Date and Time as a String', () => {
-        let dateTime = ParseString.getDateTime(inputStr);
+        const dateTime = ParseString.getDateTime(inputStr);
         assert.equal(dateTime, '03/08/2016  15:22');
+    });
+  });
+  describe('Directory Line Parsing', () => {
+    const inputStr=' Directory of c:\\Windows\\WinSxS\\8dacf';
+    it('Test if string is a top directory', () => {
+        const isTopDirectory=ParseString.isTopDirectory(inputStr);
+        assert.equal(isTopDirectory, true);
+    });
+    it('get the Top Level Directory Name', () => {
+        const nameOfTopDirectory=ParseString.getNameTopDirectory(inputStr);
+        assert.equal(nameOfTopDirectory, 'c:\\Windows\\WinSxS\\8dacf');
+
     });
   });
 });
