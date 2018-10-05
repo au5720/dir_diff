@@ -1,0 +1,22 @@
+{
+  "name": "dir_diff",
+  "version": "1.0.0",
+  "description": "to compare the output of dir /s from two different dates for file differences",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/au5720/dir_diff.git"
+  },
+  "author": "jennifermorgan2001@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/au5720/dir_diff/issues"
+  },
+  "homepage": "https://github.com/au5720/dir_diff#readme",
+  "dependencies": {
+    "mocha": "^5.2.0"
+  }
+}
