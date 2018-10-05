@@ -1,5 +1,6 @@
 
 const ps = require('./parse_string');
+const md5 = require('crypto-md5');
 
 
 
@@ -14,6 +15,7 @@ const parseFileNames = (filePath) => {
     // Check to see if we have a top Directory name
     let currentTopDirectoryName='';
     //console.log(fileData.length);
+    let obj={};
     for(let line of fileData) {
         if(ps.isTopDirectory(line)){
             currentTopDirectoryName=ps.getNameTopDirectory(line);
@@ -24,9 +26,16 @@ const parseFileNames = (filePath) => {
             let dateTime=ps.getDateTime(line);
             let fileSize=ps.getFileSize(line);
             let fullFileName=currentTopDirectoryName + '\\' + shortFileName;
-            console.log(fullFileName);
+            {
+                obj[md5(fullFileName)] = {     
+                    fullFileName: fullFileName,
+                    size: fileSize,
+                    dateTime: dateTime
+                };
+            }
         }
     }
+    return obj;
 };
 
 module.exports = {
