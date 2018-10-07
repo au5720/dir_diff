@@ -6,8 +6,8 @@ Date:       05/10/2018
 
 */
 
-const moment = require('moment');
-const ms = require('ms');
+//const moment = require('moment');
+//const ms = require('ms');
 
 const extractPresets = {
     directory: [22,25],
@@ -34,7 +34,7 @@ const isDirectory = (str) => {
 
 const getDateTime = (str) => {
     let dt = doExtract('dateTime', str);
-    return new Date(`${dt.substring(3,5)}/${dt.substring(0,2)}/${dt.substring(6)}`);
+    return `${dt.substring(3,5)}/${dt.substring(0,2)}/${dt.substring(6)}`;
 };
 
 const getFileSize = (str) => {
@@ -52,7 +52,7 @@ const getNameTopDirectory = (str) => {
 };
 
 const getDateTimeMS= (str) => {
-    return getDateTime(str).getTime();
+    return new Date(getDateTime(str)).getTime();
 };
 
 module.exports = {

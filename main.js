@@ -3,34 +3,41 @@
 const ParseFile = require('./src/parse_file');
 const FileDetails = require('./src/schemas/file_details');
 
-var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/test');
+// var mongoose = require('mongoose');
+// mongoose.connect('mongodb://localhost/test');
 
 
-var db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', function() {
-  console.log('we are connected!');
+// var db = mongoose.connection;
+// db.on('error', console.error.bind(console, 'connection error:'));
+// db.once('open', function() {
+//   console.log('we are connected!');
 
-  const filePath1='20181001.txt';
-  let fileData=ParseFile.parseFileNames(filePath1);
-  //debugger;
-  var fDetail=null;
-  var cnt=0;
-  for(let obj of fileData) {
-      //console.log(obj);
+//   const filePath1='20181001.txt';
+//   let fileData=ParseFile.parseFileNames(filePath1);
+//   //debugger;
+//   var fDetail=null;
+//   var cnt=0;
+//   for(let obj of fileData) {
+//       //console.log(obj);
 
-      fDetail = new FileDetails({fullFileName: 'dog'});
-      fDetail.save(err => {
-          if(err) throw err;
-      });
-      cnt++;
-      if((cnt % 10000) === 0) { console.log(cnt + ' inserted');}
-  }
-});
+//       fDetail = new FileDetails({fullFileName: 'dog'});
+//       fDetail.save(err => {
+//           if(err) throw err;
+//       });
+//       cnt++;
+//       if((cnt % 10000) === 0) { console.log(cnt + ' inserted');}
+//   }
+// });
 
-// const filePath1='20181001.txt';
-// let fileObject=ParseFile.parseFileNames(filePath1);
+const filePath1='20181005.txt';
+let fileData=ParseFile.parseFileNames(filePath1);
+const fs = require('fs');
+debugger;
+let fileDataSorted=fileData.sort( (a, b) => a[0] < b[0]).map(v => v.join(',')); 
+for(let elem of fileDataSorted){
+    fs.appendFileSync("./20181005_flat.txt", elem + "\n");
+}
+
 
 // let keys=Object.keys(fileObject);
 // console.log(keys[0]);
