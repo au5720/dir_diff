@@ -4,11 +4,11 @@ var Schema = mongoose.Schema;
 
 // create a schema
 var fileDetailSchema = new Schema({
-    md5: String,     
+//    md5: String,     
     fullFileName: String,
-    size: Number,
-    dateTime: Date,
-    dateTimeMS: Number
+//    size: Number,
+//    dateTime: String,
+//    dateTimeMS: Number
 });
 
 // the schema is useless so far

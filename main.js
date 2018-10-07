@@ -14,11 +14,13 @@ db.once('open', function() {
 
   const filePath1='20181001.txt';
   let fileData=ParseFile.parseFileNames(filePath1);
+  //debugger;
   var fDetail=null;
   var cnt=0;
   for(let obj of fileData) {
       //console.log(obj);
-      fDetail = new FileDetails(obj);
+
+      fDetail = new FileDetails({fullFileName: 'dog'});
       fDetail.save(err => {
           if(err) throw err;
       });

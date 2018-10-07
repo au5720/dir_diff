@@ -22,16 +22,17 @@ const parseFileNames = (filePath) => {
         else if(line !== "" && !(ps.isDirectory(line)) && !isNaN(line[0]) && line[0] !== " ")
         {
             let shortFileName=ps.getName(line);
-            let dateTime=ps.getDateTime(line);
+            let dateTime="Test Data"; //ps.getDateTime(line);
             let fileSize=ps.getFileSize(line) || 0;
             let fullFileName=currentTopDirectoryName + '\\' + shortFileName;
             let fileNameMD5 = md5(fullFileName);
             let dateTimeMS = ps.getDateTimeMS(line);
-            data.push({ md5: fileNameMD5,     
-                        fullFileName: fullFileName,
-                        size: fileSize,
-                        dateTime: dateTime,
-                        dateTimeMS: dateTimeMS});
+            data.push({ //md5: fileNameMD5,     
+                        fullFileName: fullFileName
+                        //size: fileSize,
+                        //dateTime: dateTime,
+                        //dateTimeMS: dateTimeMS
+                    });
         }
     }
     return data;
